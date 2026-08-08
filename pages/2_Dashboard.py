@@ -19,6 +19,8 @@ df["date"] = __import__("pandas").to_datetime(df["date"])
 latest = df.dropna(subset=["breadth_score"]).iloc[-1]
 prev = df.dropna(subset=["breadth_score"]).iloc[-2]
 
+cols = st.columns(5)
+
 cols[0].metric(
     "Breadth Score",
     f"{latest.breadth_score:.1f}",
