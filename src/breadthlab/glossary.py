@@ -1,4 +1,39 @@
 TOOLTIPS = {
+    "moving_average_participation": (
+    "Shows what percentage of S&P 500 stocks are above their 20-, 50-, and "
+    "200-day moving averages. Think of it as a participation check: are most "
+    "stocks healthy, or is the index being carried by only a few companies? "
+    "The 20-day line reflects short-term strength, the 50-day line medium-term "
+    "strength, and the 200-day line longer-term health."
+),
+
+"cumulative_ad_line": (
+    "The Advance-Decline Line keeps a running total of how many stocks rise "
+    "versus fall each day. It matters because it tells us whether the broader "
+    "market is confirming the S&P 500's move. A rising market with a rising "
+    "A/D Line is healthier than a rising market where the A/D Line is weakening."
+),
+
+"spy_vs_rsp": (
+    "SPY is the S&P 500 weighted toward the largest companies, while RSP gives "
+    "every S&P 500 stock roughly equal weight. Comparing them helps show whether "
+    "the average stock is participating. If SPY rises much faster than RSP, "
+    "the rally may be concentrated in a small group of very large companies."
+),
+
+"52_week_highs_lows": (
+    "Shows how many stocks are reaching new 52-week highs versus new 52-week "
+    "lows. Lots of new highs suggest broad underlying strength. Growing new "
+    "lows can reveal weakness underneath the index, even when the S&P 500 "
+    "itself still looks strong."
+),
+
+"latest_reading": (
+    "The raw market-breadth readings for the most recent trading days. This "
+    "section is included so you can see the actual numbers behind the charts "
+    "and Breadth Score, rather than relying only on the summary."
+),
+
     "breadth_score": (
         "A 0-100 summary of overall market participation. Higher means more S&P 500 "
         "stocks are participating in the market's strength. Lower means the market "

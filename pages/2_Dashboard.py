@@ -52,16 +52,101 @@ cols[4].metric(
     help=tooltip("high_low_net"),
 )
 
-st.plotly_chart(px.line(df, x="date", y="breadth_score", title="Breadth score"), use_container_width=True)
+st.subheader(
+    "Breadth Score History",
+    help=tooltip("breadth_score"),
+)
+
+st.plotly_chart(
+    px.line(
+        df,
+        x="date",
+        y="breadth_score",
+        title=None,
+    ),
+    use_container_width=True,
+)
+
 
 left, right = st.columns(2)
+
 with left:
-    st.plotly_chart(px.line(df, x="date", y=["pct_above_20dma", "pct_above_50dma", "pct_above_200dma"], title="Moving-average participation"), use_container_width=True)
-    st.plotly_chart(px.line(df, x="date", y="ad_line", title="Cumulative advance-decline line"), use_container_width=True)
+    st.subheader(
+        "Moving-Average Participation",
+        help=tooltip("moving_average_participation"),
+    )
+
+    st.plotly_chart(
+        px.line(
+            df,
+            x="date",
+            y=[
+                "pct_above_20dma",
+                "pct_above_50dma",
+                "pct_above_200dma",
+            ],
+            title=None,
+        ),
+        use_container_width=True,
+    )
+
+    st.subheader(
+        "Cumulative Advance-Decline Line",
+        help=tooltip("cumulative_ad_line"),
+    )
+
+    st.plotly_chart(
+        px.line(
+            df,
+            x="date",
+            y="ad_line",
+            title=None,
+        ),
+        use_container_width=True,
+    )
+
+
 with right:
     if "SPY" in df.columns:
-        st.plotly_chart(px.line(df, x="date", y=["SPY", "RSP"], title="SPY vs. RSP"), use_container_width=True)
-    st.plotly_chart(px.bar(df.tail(120), x="date", y=["new_52w_highs", "new_52w_lows"], barmode="group", title="52-week highs and lows"), use_container_width=True)
+        st.subheader(
+            "SPY vs. RSP",
+            help=tooltip("spy_vs_rsp"),
+        )
 
-st.subheader("Latest reading")
-st.dataframe(df.tail(20).sort_values("date", ascending=False), use_container_width=True, hide_index=True)
+        st.plotly_chart(
+            px.line(
+                df,
+                x="date",
+                y=["SPY", "RSP"],
+                title=None,
+            ),
+            use_container_width=True,
+        )
+
+    st.subheader(
+        "52-Week Highs and Lows",
+        help=tooltip("52_week_highs_lows"),
+    )
+
+    st.plotly_chart(
+        px.bar(
+            df.tail(120),
+            x="date",
+            y=["new_52w_highs", "new_52w_lows"],
+            barmode="group",
+            title=None,
+        ),
+        use_container_width=True,
+    )
+
+
+st.subheader(
+    "Latest Reading",
+    help=tooltip("latest_reading"),
+)
+
+st.dataframe(
+    df.tail(20).sort_values("date", ascending=False),
+    use_container_width=True,
+    hide_index=True,
+)
