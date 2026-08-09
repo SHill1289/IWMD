@@ -1,28 +1,67 @@
-from pathlib import Path
-import sys
 import streamlit as st
 
-ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT / "src"))
-
-st.set_page_config(page_title="Market Breadth Lab", page_icon="📈", layout="wide")
-
-st.title("Market Breadth Lab")
-st.caption("Local-first breadth monitoring, historical analogs, and signal research")
+st.set_page_config(
+    page_title="IWMD | Market Breadth Research",
+    page_icon="📈",
+    layout="wide",
+)
 
 st.markdown(
     """
-This MVP is designed around the market-internals workflow described in the Shoreline Capital reports:
-advances and declines, new highs and lows, cumulative breadth, confirmation/divergence, and bull/bear regime context.
+    <style>
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
 
-### Start here
-1. Open **Data Manager** and load the included demo dataset or download live S&P 500 data.
-2. Review **Dashboard** for the current breadth picture.
-3. Use **Historical Analogs** and **Rule Backtest** for research.
+        h1, h2, h3 {
+            letter-spacing: -0.02em;
+        }
 
-### Data caveat
-The free-data version reconstructs historical breadth using today's S&P 500 constituents. That creates survivorship bias. Treat it as a prototype and live-monitoring tool until a point-in-time constituent dataset is connected.
-"""
+        [data-testid="stMetric"] {
+            border: 1px solid rgba(128, 128, 128, 0.25);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        [data-testid="stSidebar"] {
+            border-right: 1px solid rgba(128, 128, 128, 0.20);
+        }
+
+        .iwmd-brand {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 0;
+        }
+
+        .iwmd-subtitle {
+            font-size: 1rem;
+            opacity: 0.70;
+            margin-top: 0.15rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
-st.info("No brokerage connection is included. The app reads market data and produces research outputs only.")
+st.markdown(
+ '<div class="iwmd-brand">IWMD Home</div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div class="iwmd-subtitle">Market Breadth Research & Market Internals</div>',
+    unsafe_allow_html=True,
+)
+
+st.write(
+    "A research platform for monitoring market participation, breadth, "
+    "leadership, regime changes, and historical market behavior."
+)
+
+st.info(
+    "Start with the Dashboard for the current market-internals picture, "
+    "then use Historical Analogs and Rule Backtest for deeper research."
+)
