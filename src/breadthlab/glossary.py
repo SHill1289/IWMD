@@ -1,4 +1,32 @@
 TOOLTIPS = {
+    
+"number_of_analogs": (
+    "How many similar historical market environments to include in the comparison. "
+    "A smaller number focuses on the closest matches. A larger number gives a broader "
+    "sample but may include less similar periods."
+),
+
+"historical_distance": (
+    "Measures how similar a past market-breadth environment was to the current comparison. "
+    "Smaller numbers mean the historical period was more similar."
+),
+
+"forward_5d": (
+    "What SPY returned over the next 5 trading days after the historical comparison date."
+),
+
+"forward_20d": (
+    "What SPY returned over the next 20 trading days, roughly one month."
+),
+
+"forward_60d": (
+    "What SPY returned over the next 60 trading days, roughly three months."
+),
+
+"forward_120d": (
+    "What SPY returned over the next 120 trading days, roughly six months."
+),
+
     "moving_average_participation": (
     "Shows what percentage of S&P 500 stocks are above their 20-, 50-, and "
     "200-day moving averages. Think of it as a participation check: are most "
