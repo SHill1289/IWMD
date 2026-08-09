@@ -270,8 +270,8 @@ else:
 
 st.caption(
     "Prototype note: This confirmation/divergence test uses a simple 20-trading-day "
-    "comparison between SPY and the Advance-Decline Line. It is not Shoreline Capital "
-    "Management's proprietary Differential indicator or a recreation of its trading rules."
+    "comparison between SPY and the Advance-Decline Line. It is a research tool and "
+    "does not represent any proprietary trading methodology."
 )
 
 st.subheader("Regime History")
@@ -318,8 +318,8 @@ st.plotly_chart(
 
 st.caption(
     "This chart shows the prototype market regime assigned by the Breadth Score over time. "
-    "It is intended to show changes in overall market participation, not to reproduce "
-    "Shoreline Capital Management's proprietary bull/bear filters."
+    "It is intended to show changes in overall market participation and is not a proprietary "
+    "trading signal."
 )
 
 st.subheader(
