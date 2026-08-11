@@ -6,6 +6,11 @@ st.set_page_config(
     layout="wide",
 )
 
+st.logo(
+    "assets/iwmd_logo.png",
+    size="large",
+)
+
 st.markdown(
     """
     <style>
@@ -46,9 +51,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown(
- '<div class="iwmd-brand">IWMD Home</div>',
-    unsafe_allow_html=True,
+st.image(
+    "assets/iwmd_logo.png",
+    width=360,
 )
 
 st.markdown(
