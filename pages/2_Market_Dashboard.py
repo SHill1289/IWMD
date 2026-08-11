@@ -71,34 +71,35 @@ df["date"] = __import__("pandas").to_datetime(df["date"])
 latest = df.dropna(subset=["breadth_score"]).iloc[-1]
 prev = df.dropna(subset=["breadth_score"]).iloc[-2]
 
-cols = st.columns(5)
+row1 = st.columns(3)
+row2 = st.columns(2)
 
-cols[0].metric(
+row1[0].metric(
     "Breadth Score",
     f"{latest.breadth_score:.1f}",
     f"{latest.breadth_score - prev.breadth_score:+.1f}",
     help=tooltip("breadth_score"),
 )
 
-cols[1].metric(
+row1[1].metric(
     "Regime",
     latest.regime,
     help=tooltip("regime"),
 )
 
-cols[2].metric(
+row1[2].metric(
     "Above 50-DMA",
     f"{latest.pct_above_50dma:.0%}",
     help=tooltip("above_50dma"),
 )
 
-cols[3].metric(
+row2[0].metric(
     "Above 200-DMA",
     f"{latest.pct_above_200dma:.0%}",
     help=tooltip("above_200dma"),
 )
 
-cols[4].metric(
+row2[1].metric(
     "52-week H-L",
     f"{int(latest.high_low_net):+d}",
     help=tooltip("high_low_net"),
