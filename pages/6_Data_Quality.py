@@ -29,8 +29,7 @@ st.line_chart(coverage.set_index("date"))
 
 st.subheader("Known limitations")
 st.markdown("""
-- Historical breadth uses current S&P 500 membership.
+- Historical breadth is reconstructed using current S&P 500 membership, which introduces survivorship bias.
 - Free vendor data may contain missing observations, symbol changes, and provider corrections.
 - Exchange-level up/down volume, TRIN, and official NYSE/Nasdaq breadth are not yet included.
-- The score is a transparent prototype, not Shoreline Capital's proprietary Differential or trading model.
 """)
