@@ -11,46 +11,6 @@ st.logo(
     size="large",
 )
 
-st.markdown(
-    """
-    <style>
-        .block-container {
-            padding-top: 2rem;
-            padding-bottom: 3rem;
-        }
-
-        h1, h2, h3 {
-            letter-spacing: -0.02em;
-        }
-
-        [data-testid="stMetric"] {
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 12px;
-            padding: 14px 16px;
-        }
-
-        [data-testid="stSidebar"] {
-            border-right: 1px solid rgba(128, 128, 128, 0.20);
-        }
-
-        .iwmd-brand {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            margin-bottom: 0;
-        }
-
-        .iwmd-subtitle {
-            font-size: 1rem;
-            opacity: 0.70;
-            margin-top: 0.15rem;
-            margin-bottom: 2rem;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
 st.image(
     "assets/iwmd_logo.png",
     width=360,
