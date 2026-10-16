@@ -48,6 +48,13 @@ def calculate_security_features(prices: pd.DataFrame) -> pd.DataFrame:
 
 
 def calculate_daily_breadth(features: pd.DataFrame) -> pd.DataFrame:
+    # Comparisons with unavailable rolling highs/lows produce booleans mixed
+    # with missing values. Normalize them before aggregation so the resulting
+    # counts have a stable nullable integer dtype for Parquet export.
+    features = features.copy()
+    for column in ("new_52w_high", "new_52w_low"):
+        features[column] = features[column].astype("Int64")
+
     agg = features.groupby("date").agg(
         issues=("symbol", "nunique"),
         advances=("advance", "sum"),
